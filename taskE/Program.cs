@@ -1,5 +1,5 @@
 ﻿using System.Text;
-
+//часичное решение
 
 int[] getArrFromString(string str)
 {

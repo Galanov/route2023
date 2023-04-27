@@ -1,5 +1,6 @@
 ﻿using System.Text;
 
+// частичное решение
 
 int[] getArrFromString(string str)
 {
@@ -33,7 +34,11 @@ for (int i = 0; i < count; i++)
             break;
         }
         var correctPeriod = date1 <= date2;
-        if (!correctPeriod || list.Any(l => (l.Item1 <= date1 && date1<= l.Item2) || (l.Item1 <= date2 && date2 <= l.Item2)))
+        if (!correctPeriod || list.Any(l => 
+            (l.Item1 <= date1 && date2<= l.Item2) 
+            || (l.Item1 <= date1 && date1 <= l.Item2) 
+            || (l.Item1 <= date2 && date2 <= l.Item2)
+            || (date1 <= l.Item1  &&  l.Item2<=date2 )))
         {
             result = false;
             break;
